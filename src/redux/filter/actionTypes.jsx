@@ -1,2 +1,2 @@
-export const TOGGLE_STATUS = "filter/add";
-export const TOGGLE_COLOR = "filter/delete";
+export const TOGGLE_STATUS = "filter/statusChanged";
+export const TOGGLE_COLOR = "filter/colorCnaged";

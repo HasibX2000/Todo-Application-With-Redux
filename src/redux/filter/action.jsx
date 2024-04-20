@@ -12,8 +12,6 @@ export const toggleColor = (color, changeType) => {
 export const toggleStatus = (statusType) => {
   return {
     type: TOGGLE_STATUS,
-    payload: {
-      statusType,
-    },
+    payload: statusType,
   };
 };
