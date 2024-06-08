@@ -3,7 +3,8 @@ import NoteIcon from "../assets/notes.png";
 import DoubleTick from "../assets/double-tick.png";
 import PlusIcon from "../assets/plus.png";
 import { useDispatch } from "react-redux";
-import { addTodo, completeAll, completeClear } from "../redux/todo/action";
+import { completeAll, completeClear } from "../redux/todo/action";
+import addtodos from "../redux/todo/thunk/addtodos";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const Header = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (input.length > 0) {
-      dispatch(addTodo(input));
+      dispatch(addtodos(input));
       setInput("");
     } else {
       alert("Please enter a todo");

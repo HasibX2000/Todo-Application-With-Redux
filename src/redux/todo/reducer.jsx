@@ -6,6 +6,7 @@ import {
   COLOR_TODO,
   COMPLETE_ALL,
   COMPLETE_CLEAR,
+  LOADED,
 } from "./actionTypes";
 
 const nextTodoId = (todos) => {
@@ -15,6 +16,9 @@ const nextTodoId = (todos) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOADED:
+      return action.payload;
+
     case ADD_TODO:
       return [
         ...state,
@@ -31,8 +35,7 @@ const reducer = (state = initialState, action) => {
             ...todo,
             completed: !todo.completed,
           };
-        }
-        return todo;
+        } else return todo;
       });
     case COLOR_TODO:
       const { todoId, color } = action.payload;

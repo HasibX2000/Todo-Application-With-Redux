@@ -1,4 +1,5 @@
 export const ADD_TODO = "todo/add";
+export const LOADED = "todo/loaded";
 export const DELETE_TODO = "todo/delete";
 export const TOGGLE_TODO = "todo/toggle";
 export const COLOR_TODO = "todo/color";

@@ -5,12 +5,20 @@ import {
   COMPLETE_ALL,
   COMPLETE_CLEAR,
   COLOR_TODO,
+  LOADED,
 } from "./actionTypes";
 
 export const addTodo = (todoText) => {
   return {
     type: ADD_TODO,
     payload: todoText,
+  };
+};
+
+export const loaded = (todos) => {
+  return {
+    type: LOADED,
+    payload: todos,
   };
 };
 

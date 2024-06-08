@@ -2,20 +2,23 @@ import React from "react";
 import CancelIcon from "../assets/cancel.png";
 import { useDispatch } from "react-redux";
 import { toggleTodo, colorSelected, deleteTodo } from "../redux/todo/action";
+import statusupdate from "../redux/todo/thunk/statusupdate";
+import colorupdate from "../redux/todo/thunk/colorupdate";
+import deletetodos from "../redux/todo/thunk/deletetodos";
 
 const Todo = ({ todo }) => {
   const { text, id, completed, color } = todo;
   const dispatch = useDispatch();
 
   const handleInputChange = (todoId) => {
-    dispatch(toggleTodo(todoId));
+    dispatch(statusupdate(todoId, completed));
   };
 
   const handleColorChange = (todoId, color) => {
-    dispatch(colorSelected(todoId, color));
+    dispatch(colorupdate(todoId, color));
   };
   const handleDelete = (todoId) => {
-    dispatch(deleteTodo(todoId));
+    dispatch(deletetodos(todoId));
   };
   return (
     <div className="flex justify-start items-center p-2 hover:bg-gray-100 hover:transition-all space-x-4 border-b border-gray-400/20 last:border-0">
